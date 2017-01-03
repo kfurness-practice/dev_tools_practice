@@ -18,28 +18,60 @@
     }
 
     // Regular
+    console.log('hello');
 
     // Interpolated
+    console.log('Hello, I am a %s string!', '💩');
+
+    // ES6 Interpolated
+    var poop = '💩';
+    console.log(`Hello, I am ${poop}`);
 
     // Styled
+    console.log('%c I am some great text', 'font-size: 23px; color: red; background:blue; text-shadow: 10px 10px 0 white');
 
     // warning!
+    console.warn('Oh bananas!');
 
     // Error :|
+    console.error(`Oh ${poop}`);
 
     // Info
+    console.info('Crocodiles eat 72-83 people per year... not really. But they would if they could')
 
     // Testing
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('ouch'), 'wooopsy doodles, not correct');
+    console.assert(1 === 1, 'that is so wrong');
+    console.assert(1 === 2, 'that is so wrong');
 
     // clearing
+    // console.clear();
 
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.group(`${dog.name}`);
+        console.log(`This is ${dog.name}`);
+        console.log(`He is ${dog.age} years old`);
+      console.groupEnd(`${dog.name}`);
+    })
 
     // counting
+    console.count('Wes');
+    console.count('poop');
+    console.count('dogs');
 
     // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/kfurness')
+      .then(data => data.json())
+      .then(data => { console.timeEnd('fetching data');
+    console.log(data);
+  })
 
   </script>
 </body>
